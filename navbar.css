@@ -63,7 +63,7 @@ nav a:hover {
   }
 
   .nav-links {
-    display: none; /* hidden by default */
+    display: none; 
     flex-direction: column;
     gap: 10px;
     width: 100%;
