@@ -6,7 +6,7 @@ nav {
   background-color: #C7ECF7; 
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
   position: relative; 
-  margin-bottom: 17%;
+  margin-bottom: 3%;
 }
 
 nav img.logo {
@@ -45,6 +45,11 @@ nav a:hover {
 @media (max-width: 768px) {
   .hamburger {
     display: block; 
+  }
+
+  nav{
+    margin-bottom: 17%;
+
   }
 
   .nav-links {
