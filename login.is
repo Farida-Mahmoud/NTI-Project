@@ -1,0 +1,97 @@
+function showSignupPage() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('signupPage').style.display = 'flex';
+}
+
+function showLoginPage() {
+    document.getElementById('signupPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'flex';
+}
+
+function togglePasswordVisibility(inputId, el) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+        el.textContent = 'hide';
+    } else {
+        input.type = 'password';
+        el.textContent = 'show';
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    if (togglePassword) {
+        togglePassword.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePassword.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    }
+});
+
+function handleLogin(username, password, rememberMe) {
+    if (!username || !password) {
+        alert('Please fill in all fields!');
+        return;
+    }
+    alert('Login successful! Welcome, ' + username);
+}
+
+function handleSignup(firstName, lastName, email, password, confirmPassword, privacyPolicy) {
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+        alert('Please fill in all fields!');
+        return;
+    }
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+    if (!privacyPolicy) {
+        alert('Please agree to the privacy policy!');
+        return;
+    }
+    alert('Account created successfully! Welcome, ' + firstName + ' ' + lastName);
+    showLoginPage();
+}
+document.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (e.target.matches('.login-form')) {
+        handleLogin(
+            document.getElementById('username').value,
+            document.getElementById('password').value,
+            document.getElementById('rememberMe').checked
+        );
+    } else if (e.target.matches('.signup-form')) {
+        handleSignup(
+            document.getElementById('firstName').value,
+            document.getElementById('lastName').value,
+            document.getElementById('email').value,
+            document.getElementById('signupPassword').value,
+            document.getElementById('confirmPassword').value,
+            document.getElementById('privacyPolicy').checked
+        );
+    }
+});
+
+document.addEventListener('click', function(e) {
+    if (e.target.closest('.social-icons i')) {
+        const icon = e.target;
+        if (icon.classList.contains('fa-facebook')) {
+            alert('Redirecting to Facebook...');
+        } else if (icon.classList.contains('fa-google')) {
+            alert('Redirecting to Google...');
+        } else if (icon.classList.contains('fa-envelope')) {
+            alert('Opening email client...');
+        }
+    }
+});
+
+function showLocation() {
+    alert('Al Salam Hospital\n123 Healthcare Street\nMedical District, City\nCountry');
+}
