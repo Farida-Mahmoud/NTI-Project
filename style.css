@@ -1,192 +1,92 @@
-:root {
-    --lightblue: #C7ECF7;
-    --blue: #47BBDB;
-    --blue-text: #08657F;
-}
 
-* {
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    outline: none;
-    list-style-type: none;
-    box-sizing: border-box;
-    position: relative;
-}
-
-body {
-    max-width: 100svw;
-    min-height: 100svh;
-    font-family: "Outfit", sans-serif;
-    background-color: var(--lightblue);
-}
-
-h1 {
-    color: var(--blue-text);
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    border-bottom: 2px solid var(--blue-text);
-}
-
-.get-in-touch {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 5% 0px;
-    gap: 30px;
-}
-
-.get-in-touch img {
-    border-radius: 10px;
-    max-width: 90%;
-}
-
-.img-container {
-    background-color: white;
-    height: 65svh;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px gray;
-    max-width: 40%;
-}
-
-.get-in-touch p {
-    font-size: 25px;
-    text-align: center;
-    max-width: 50%;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 7% 0px;
-
-}
-
-.cont {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.contact-form .input {
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin: 10px;
-    background-color: white;
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.contact-btn {
-    padding: 20px 40px;
-    border-radius: 20px;
-    background-color: var(--blue-text);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.5s ease;
-    width: fit-content;
-    white-space: nowrap;
-}
-
-.contact-btn:hover {
-    background-color: white;
-    color: var(--blue-text);
-    border: 1px solid var(--blue-text);
-
-}
-
-.get {
-    font-size: 30px;
-    color: var(--blue-text);
-    margin-bottom: 20px;
-}
-
-.get::before {
-    content: "";
-    height: 3px;
-    width: 100px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -5px;
-    background-color: var(--blue-text);
-    border-radius: 2px;
-}
-
-footer {
-    background-color: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-    border-radius: 15px 15px 0px 0px;
-}
-
-footer div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.validation-message {
-    color: rgb(120, 3, 3);
-}
-
-.valid {
-    color: rgb(1, 83, 1);
-}
-
-
-@media (max-width:1024px) {
-    .get-in-touch p {
-        font-size: 20px;
-
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f9fc;
     }
 
-    .get-in-touch {
-        display: flex;
+    .departments {
+      text-align: center;
+      padding: 40px 20px;
+      background: #e6f3fa;
+    }
+
+    .departments h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #222;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      position: relative;
+      width: 280px;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+      filter: brightness(0.8);
+    }
+
+    .card-text {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: white;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: black;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .card:hover .arrow {
+      background: black;
+      color: white;
+    }
+
+
+    @media (max-width: 768px) {
+      .cards {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-    }
+      }
 
-    .img-container {
-        height: 30vh;
+      .card {
+        width: 90%;
+      }
     }
-}
-
-@media (max-width:432px) {
-    footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .img-container {
-        height: 20vh;
-    }
-
-    .get-in-touch p {
-        font-size: 16px;
-
-    }
-
-    .contact-form .input {
-        width: 80%;
-    }
-}
