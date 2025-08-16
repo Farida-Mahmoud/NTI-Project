@@ -1,0 +1,138 @@
+:root {
+    --lightblue: #C7ECF7;
+    --blue: #47BBDB;
+    --blue-text: #08657F;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    position: relative;
+}
+body {
+    max-width: 100svw;
+    min-height: 100svh;
+    font-family: "Outfit", sans-serif;
+}
+.about{
+    height: 100svh;
+    width: 100svw;
+    padding: 20px;
+}
+.about .contant_about{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    padding: 10px 0;
+    font-size: 20px ;
+}
+.about .contant_about h3::before{
+    content: " ";
+    background-color: var(--blue-text);
+    width: 100px;
+    height: 3px;
+    position: absolute;
+    bottom: -2px;
+}
+.about .contant_about p{
+    margin-top: 30px;
+}
+.about .contant_about p span{
+    font-size: larger;
+    color: var(--blue-text);
+}
+.about .allcards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.about .allcards .rl-icon{
+    font-size: 30px;
+}
+.about .cards{
+    background-color: var(--lightblue);
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    padding: 20px ;
+}
+.about .card-about{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0 0 10px gray;
+    border:1px solid white ;
+    border-radius: 20px;
+    padding: 20px ;
+    font-size: 20px ;
+    transition: all .3s ease;
+}
+.about .card-about:hover{
+    transform: scale(.97);
+}
+.about .card-about img{
+    border-radius: 50%;
+}
+.about .card-about h4 ,p{
+    margin: 23px 0;
+}
+.about .card-about .btn-about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.about .card-about button{
+    
+    /* margin-left: 25px;  */
+    padding: 15px 35px;
+    border-radius: 20px;
+    background-color: var(--blue-text);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    /* width: fit-content;
+    white-space: nowrap; */
+}
+.about .card-about button:hover{
+    background-color: white;
+    color: var(--blue-text);
+    border: 1px solid var(--blue-text);
+}
+.lines{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.line{
+    margin: 30px 0;
+    width: 7%;
+    height: 2px;
+    background-color:var(--blue-text);
+}
+.line2{
+    background-color: gray;
+}
+/* ////////////////////////////////// */
+@media (max-width:1162px) {
+    .about .card-about .btn-about{
+        flex-direction: column;
+
+    }
+}
+
+@media (max-width:800px) {
+    .about .cards{
+        flex-direction: column;
+    }
+}
