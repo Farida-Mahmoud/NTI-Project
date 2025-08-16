@@ -18,6 +18,7 @@ function togglePasswordVisibility(inputId, el) {
         el.textContent = 'show';
     }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.getElementById('password');
@@ -40,7 +41,13 @@ function handleLogin(username, password, rememberMe) {
         alert('Please fill in all fields!');
         return;
     }
-    alert('Login successful! Welcome, ' + username);
+
+    if (username === "admin" && password === "1234") {
+        alert("Login successful! Welcome, " + username);
+        window.location.href = "home.html"; 
+    } else {
+        alert("Invalid username or password!");
+    }
 }
 
 function handleSignup(firstName, lastName, email, password, confirmPassword, privacyPolicy) {
@@ -59,6 +66,7 @@ function handleSignup(firstName, lastName, email, password, confirmPassword, pri
     alert('Account created successfully! Welcome, ' + firstName + ' ' + lastName);
     showLoginPage();
 }
+
 document.addEventListener('submit', function(e) {
     e.preventDefault();
     if (e.target.matches('.login-form')) {

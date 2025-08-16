@@ -51,3 +51,49 @@ button:hover, .btn:hover {
     background-color: white;
     color: black;
 }
+
+
+
+@media (max-width: 768px) {
+  .Cards {
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  button, .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .Cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 18rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  button, .btn {
+    width: auto;
+  }
+}
