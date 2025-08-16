@@ -1,4 +1,4 @@
-let name = document.querySelector(".name");
+let name = document.querySelector(".name-input");
 let email = document.querySelector(".email");
 let phoneNumber = document.querySelector(".phone");
 let age = document.querySelector(".age");
