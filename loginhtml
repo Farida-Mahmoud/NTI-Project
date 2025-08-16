@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Salam Hospital</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page" id="loginPage">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="info-section">
+                    <div class="welcome-header">
+                        <h1 class="welcome-text">Welcome</h1>
+                        <h2 class="hospital-name">Al Salam Hospital</h2>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="about-section" id="about">
+                        <h3>About Al Salam Hospital</h3>
+                        <p>Providing comprehensive healthcare services with emergency care, intensive care, radiology, laboratory services, and pharmacy. Our dedicated team ensures the highest quality care for all patients.</p>
+                    </div>
+
+                    <div class="contact-section" id="contact">
+                        <h3>Contact Us</h3>
+                        <div class="contact-item">
+                            <i class="fab fa-facebook"></i>
+                            <a href="https://facebook.com" target="_blank">Our Facebook Page</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0011111111">-0011111111</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="#" onclick="showLocation()">Our Location</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-section" id="login">
+                    <h2 class="login-title">Login</h2>
+                    <form class="login-form">
+                        <div class="input-group">
+                            <label for="username">User Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="username" placeholder="Username" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="password" placeholder="******" required>
+                                <i class="fas fa-eye" id="togglePassword"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                <input type="checkbox" id="rememberMe"> Remember me
+              </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+
+                        <div class="social-login">
+                            <p>Or</p>
+                            <div class="social-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-google"></i>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="signup-link">
+                            <p>Don't have an account? <a href="#" onclick="showSignupPage()">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="signupPage" style="display: none;">
+        <div class="container">
+            <div class="signup-wrapper">
+                <h2 class="signup-title">Sign Up</h2>
+                <form class="signup-form">
+                    <div class="name-row">
+                        <div class="input-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="First Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="signupPassword" placeholder="Password" required>
+                            <span class="toggle-text" onclick="togglePasswordVisibility('signupPassword', this)">show</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                            <span class="toggle-text" onclick="togglePasswordVisibility('confirmPassword', this)">show</span>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="privacyPolicy" required>
+                        <label for="privacyPolicy">I agree with privacy and policy</label>
+                    </div>
+
+                    <button type="submit" class="signup-btn">Sign Up</button>
+
+                    <div class="login-link">
+                        <p>Already have an account? <a href="#" onclick="showLoginPage()">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
